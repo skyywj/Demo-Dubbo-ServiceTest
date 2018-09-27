@@ -15,6 +15,7 @@ public class TestService {
 
     public void testServece(){
         //此处写逻辑，注意不要在接口层去写过多逻辑，尽量放到service层
+        testDao.addTest();
 
     }
 

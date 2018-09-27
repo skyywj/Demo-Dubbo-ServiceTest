@@ -20,9 +20,12 @@ public class TestTestService {
     @Autowired
     private TestService testService;
 
+    /**
+     * 单元测试，运行某个方法即可
+     */
     @Test
     public void test01(){
-
+        testService.testServece();
     }
 
 }
