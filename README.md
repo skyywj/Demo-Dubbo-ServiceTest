@@ -11,6 +11,10 @@
 
     现在开始创建多模块,右键左侧导航目录中你的项目，选择Add->Module->Maven,不需要使用模板，直接起好名字一直next就可以了,这种的就是普通的模块，比如说你的Model层，Dao层之类的，我们先创建模块，最后添加依赖关系
     创建好其他模块后，我们还要创建一个入口模块，和创建普通模块一样，名字叫做application,创建完后，修改pom.xml，入口模块要依赖于你的其他模块的，因此，要加入其他模块的依赖,同时该模块也是项目运行的入口，因此将最开始创建项目的pom.xml中的build部分迁移到本模块的pom.xml,同时将src中java下的包复制到application模块的java目录下中
+项目启动：
+    
+    运行：HrProsApplicaton.java
+    浏览器输入：localhost:8082
 
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
