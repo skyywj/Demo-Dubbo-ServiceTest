@@ -1,8 +1,9 @@
-此项目为测试体验项目
+此项目为demo项目
 
-学习：springboot、grpc协议、protobuf、git、mvn
+学习springboot连接mysql，以后可能不再更新，当模板用
 
 创建项目的步骤：
+
 创建项目:
         
     打开Intellij IDEA，选择new Proejct，在左侧选择Spring Initializr，点next,选择需要添加的功能，一路next直至finish，打开项目后，点击右下角的Enable Auto-import，
@@ -16,36 +17,6 @@
     运行：HrProsApplicaton.java
     浏览器输入：localhost:8082
 
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>blog</artifactId>
-        <groupId>lee</groupId>
-        <version>0.0.1-SNAPSHOT</version>
-    </parent>
-    <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>application</artifactId>
-    <dependencies>
-        <dependency>
-            <groupId>lee</groupId>
-            <artifactId>hello</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
-</project>
 
 git常用命令：
 
