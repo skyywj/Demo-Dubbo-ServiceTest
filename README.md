@@ -1,3 +1,6 @@
+注意代码格式化：IDEA
+快捷键 windows：ctrl+alt+l   mac：option+command+l（win+alt+l）
+
 此项目为demo项目
 
 学习springboot连接mysql，以后可能不再更新，当模板用
