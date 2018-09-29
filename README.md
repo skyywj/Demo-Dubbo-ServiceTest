@@ -72,3 +72,5 @@
           
                     不指定配置文件启动时采用默认配置，无密码 redis通过属性requirepass 设置访问密码，但没有设置该属性时，客户端向服务端发送AUTH请求，服务端就好返回异常：ERR Client sent AUTH, but no password is set
         
+
+6、支持异步处理使用@Async("taskScheduler")
