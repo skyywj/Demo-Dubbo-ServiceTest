@@ -1,7 +1,7 @@
 注意代码格式化：IDEA
 快捷键 windows：ctrl+alt+l   mac：option+command+l（win+alt+l）
 
-此项目为demo项目
+此项目为demo项目:支持springboot mysql redis
 
 学习springboot连接mysql，以后可能不再更新，当模板用
 
@@ -39,7 +39,21 @@
   
 5、使用缓存
 
-    1、pom添加必要的redis、cache、common依赖
-    2、properties添加redis相关配置
-    3、启动类编写相关启动bean
-    4、dao层使用相关注解进行缓存的使用，资料链接：https://blog.csdn.net/qq_37465368/article/details/81385395
+    （一）添加redis
+        1、pom添加必要的redis、cache、common依赖
+        2、properties添加redis相关配置
+        3、启动类编写相关启动bean
+        4、dao层使用相关注解进行缓存的使用，资料链接：https://blog.csdn.net/qq_37465368/article/details/81385395
+    （二）添加redisson
+        1、添加redisson依赖包
+        2、添加redisson相关bean
+        3、service层可直接编写redisson操作缓存
+        
+        注意点:使用redisson需要配置自己本地的redis配置文件redis.config  将requirepass foobared注释打开，（foobared即为密码）
+            然后重启redis：关闭redis-cli -h 127.0.0.1 -p 6379 shutdown
+                        启动：1）、指定配置文件 $: ./redis-server /usr/local/redis.conf &
+                             2）、不指定配置：$: ./redis-server &
+                             不指定配置文件启动时采用默认配置，无密码
+                             redis通过属性requirepass 设置访问密码，但没有设置该属性时，客户端向服务端发送AUTH请求，服务端就好返回异常：ERR Client sent AUTH, but
+                             no password is set
+        4、properties配置上密码 ： spring.redis.password=foobared 

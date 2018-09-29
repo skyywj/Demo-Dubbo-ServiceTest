@@ -9,31 +9,18 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @Author: CarryJey
- * @Date: 2018/9/27 上午10:33
+ * @Date: 2018/9/29 12:35:13
  */
-
-@RunWith(SpringRunner.class)
 @SpringBootTest
+@RunWith(SpringRunner.class)
 @Component
-public class TestTestService {
+public class TestRedissonService {
 
     @Autowired
-    private TestService testService;
+    private RedissonTestService redissonService;
 
-    /**
-     * 单元测试，运行某个方法即可
-     */
     @Test
-    public void test01(){
-        testService.testService(1);
+    public void testRedisson(){
+        redissonService.testRedisson();
     }
-
-    /**
-     * redis测试
-     */
-    @Test
-    public void testCache(){
-        testService.testCache(41);
-    }
-
 }
