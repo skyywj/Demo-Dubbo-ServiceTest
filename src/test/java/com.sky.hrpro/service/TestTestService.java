@@ -25,7 +25,12 @@ public class TestTestService {
      */
     @Test
     public void test01(){
-        testService.testServece();
+        testService.testService(1);
+    }
+
+    @Test
+    public void testCache(){
+        testService.testCache(41);
     }
 
 }
