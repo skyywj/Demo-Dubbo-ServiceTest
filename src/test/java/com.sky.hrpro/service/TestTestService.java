@@ -36,4 +36,11 @@ public class TestTestService {
         testService.testCache(41);
     }
 
+    /**
+     * lockHelper工具测试
+     */
+    @Test
+    public void testLockHelper(){
+        testService.testLockHelper();
+    }
 }

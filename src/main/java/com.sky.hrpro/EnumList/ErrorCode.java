@@ -10,7 +10,9 @@ public enum ErrorCode {
     //服务端错误
     ERROR_SERVER_ERROR(0),
     //超时错误
-    ERROR_TIME_OUT(1);
+    ERROR_TIME_OUT(1),
+    //加锁失败
+    ERROR_SYNC_IN_PROGRESS(2);
 
 
     private final int value;
