@@ -21,7 +21,7 @@ public class NotifyService {
 
     /**
      * Demo监听事件处理方法
-     * 不用监听事件以参数区分
+     * 从方法参数中获取事件类型
      */
     @TransactionalEventListener(fallbackExecution = true)
     @Async("pushNotifyExecutor")

@@ -22,6 +22,7 @@ public class EventDemo extends AbstractEvent<EventDemo>{
 
 
     public EventDemo(String eventName){
+        logger.info("event demo was been used...");
         this.eventName = eventName;
     }
 

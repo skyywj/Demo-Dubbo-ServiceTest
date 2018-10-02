@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.sky.hrpro.notify.EventDemo;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
@@ -18,6 +19,7 @@ import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -65,10 +67,27 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class HrProsApplication{
     private static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
+    @Autowired
+    private ApplicationEventPublisher eventPublisher;
+    /**
+     * demo of hello git .
+     * http://localhost:8082/
+     */
     @RequestMapping("/")
     public String  hello(){
         return "hello git";
     }
+
+    /**
+     * demo of event publish and listen...
+     * http://localhost:8082/eventdemo
+     */
+    @RequestMapping("/eventdemo")
+    public String  helloNotifyDemo(){
+        eventPublisher.publishEvent(new EventDemo("test demo event publish and listen..."));
+        return "hello demo notify ...";
+    }
+
 
     public static void main(String args[]){
         SpringApplication.run(HrProsApplication.class, args);

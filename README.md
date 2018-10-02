@@ -74,3 +74,5 @@
         
 
 6、支持异步处理使用@Async("taskScheduler")
+
+7、支持事件发布监听，如EventDemo
