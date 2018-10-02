@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.google.common.collect.ImmutableMap;
+import com.sky.hrpro.interceptor.RequestIdInterceptor;
 import com.sky.hrpro.util.JsonUtils;
 
 import java.util.Map;
@@ -54,7 +55,8 @@ public abstract class AbstractEvent <T extends AbstractEvent<T>>{
     public AbstractEvent(){
         //暂时先写死，应该写成动态监听获取
         this.fromUserId = 001;
-        this.eventId = "event1";
+        // 先使用 request id 作为 event id
+        this.eventId = RequestIdInterceptor.getRequestId();
     }
 
     /**
@@ -139,7 +141,6 @@ public abstract class AbstractEvent <T extends AbstractEvent<T>>{
     protected void excludeFields(Map<String, ?> map) {
         map.remove("lifetime");
         map.remove("java_type");
-        map.remove("accid");
     }
 
     @Override
