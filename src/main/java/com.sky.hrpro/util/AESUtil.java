@@ -11,15 +11,22 @@ import java.security.SecureRandom;
 import java.security.spec.KeySpec;
 import java.util.Base64;
 
+/**
+ * @Author: CarryJey
+ * @Date: 2018/9/27 下午4:55
+ *
+ * web端传输数据AES加密工具
+ *
+ */
 
 public class AESUtil {
 
     private static final String TAG = AESUtil.class.getName();
-    private static final String salt = "B7KH8IwW0+1PfSgPtuNN/A==";
-    private static final String password = "u8WVYUt3w0KLg|@E";
+    private static final String salt = "a8jLOIwW0+1PfSgPtuNN/A==";
+    private static final String password = "O8UEYUt3w0KLg|@E";
 
-    private static final String key = "c20690f234fb5558";
-    private static final String iv = "4e9ca3944a488b57";
+    private static final String key = "c20690f234fad460";
+    private static final String iv = "4e9ca3944a485a01";
 
     public static String generatKey() {
         try {
@@ -98,33 +105,6 @@ public class AESUtil {
         byte[] iv = new byte[16];
         System.arraycopy(key, 0, iv, 0, 16);
         return iv;
-    }
-
-    public static String encrypt2(String value) {
-        byte[] encodeValue = AESUtil.AES_CBC_Encrypt(value.getBytes(),key.getBytes(),iv.getBytes());
-        return Base64.getEncoder().encodeToString(encodeValue);
-    }
-
-    public static String encrypt3(String value) {
-        String iv = "F27D5C9927726BCEFE7510B1BDD3D137";
-        try {
-            byte[] secretKeyBytes = getSecretKey(salt);
-            SecretKey key = new SecretKeySpec(secretKeyBytes, "AES");
-            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
-            cipher.init(Cipher.ENCRYPT_MODE, key, new IvParameterSpec(getIV(iv.getBytes())));
-            byte[] encodeValue = cipher.doFinal(value.getBytes());
-
-            return Base64.getEncoder().encodeToString(encodeValue);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return null;
-    }
-
-    public static String decrypt2(String encrypted) {
-        byte[] decryptValue = AES_CBC_Decrypt(Base64.getDecoder().decode(encrypted), key.getBytes(), iv.getBytes());
-        return new String(decryptValue);
     }
 
 
