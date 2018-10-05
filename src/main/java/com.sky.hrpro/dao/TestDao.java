@@ -3,7 +3,6 @@ package com.sky.hrpro.dao;
 import com.sky.hrpro.entity.TestEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -19,6 +18,10 @@ import java.util.List;
 @Repository
 @CacheConfig(cacheNames = "test_cache")
 public class TestDao {
+    /**
+     * entity 与 sql映射对应关系
+     * sql中对应字段与entity中字段对应关系转化：（1）下划线和驼峰的转换  （2）大小写的转化
+     */
     private static final BeanPropertyRowMapper<TestEntity> rowMapper = BeanPropertyRowMapper.newInstance(TestEntity.class);
 
     /**
