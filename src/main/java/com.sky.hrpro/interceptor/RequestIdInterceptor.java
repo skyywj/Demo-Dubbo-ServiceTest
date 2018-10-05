@@ -65,6 +65,7 @@ public class RequestIdInterceptor implements ServerInterceptor {
     }
 
     public static String getRequestId() {
+        //Request_id_key拦截的是grpc请求
         String requestId = REQUEST_ID_KEY.get();
         if (requestId != null) {
             return requestId;

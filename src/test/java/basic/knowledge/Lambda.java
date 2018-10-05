@@ -1,4 +1,4 @@
-package java.basic.knowledge;
+package basic.knowledge;
 
 /**
  * Desc:lambda表达式练习
