@@ -166,6 +166,27 @@
             <version>1.2.49</version>
         </dependency>
 
+        <!--dubbo服务API-->
+        <dependency>
+            <groupId>HrPros</groupId>
+            <artifactId>service-api</artifactId>
+            <version>0.0.10</version>
+        </dependency>
+
+        <!--dubbo依賴包-->
+        <dependency>
+            <groupId>io.dubbo.springboot</groupId>
+            <artifactId>spring-boot-starter-dubbo</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--dubbo服务API-->
+        <dependency>
+            <groupId>HrPros</groupId>
+            <artifactId>service-api</artifactId>
+            <version>0.0.10</version>
+        </dependency>
+
 
     </dependencies>
 

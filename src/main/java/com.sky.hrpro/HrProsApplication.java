@@ -1,6 +1,9 @@
 package com.sky.hrpro;
 
 
+import api.demo.DemoInterface;
+import api.demo.bean.DemoBean;
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -69,13 +72,17 @@ public class HrProsApplication{
 
     @Autowired
     private ApplicationEventPublisher eventPublisher;
+
+    @Reference(version = "1.0.0")
+    private DemoInterface demoInterface;
     /**
      * demo of hello git .
      * http://localhost:8082/
      */
     @RequestMapping("/")
     public String  hello(){
-        return "hello git";
+        DemoBean demoBean = demoInterface.getDemoBean(40);
+        return "hello :"+demoBean.getName();
     }
 
     /**
