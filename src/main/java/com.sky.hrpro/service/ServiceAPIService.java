@@ -1,8 +1,7 @@
 package com.sky.hrpro.service;
-
-import api.demo.DemoInterface;
-import api.demo.bean.DemoBean;
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.sky.hypro.service.DemoBean;
+import com.sky.hypro.service.DemoInterface;
 import org.springframework.stereotype.Service;
 
 /**

@@ -1,14 +1,13 @@
 package com.sky.hrpro;
 
-
-import api.demo.DemoInterface;
-import api.demo.bean.DemoBean;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.sky.hrpro.notify.EventDemo;
+import com.sky.hypro.service.DemoBean;
+import com.sky.hypro.service.DemoInterface;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
